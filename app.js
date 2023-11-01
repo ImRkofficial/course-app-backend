@@ -29,6 +29,9 @@ app.use('/api/v1', payment);
 app.use('/api/v1', other);
 
 
+app.get('/',(req,res)=>{
+    res.status(200).send(`<h1>Server is Working good Click <a href="${process.env.FRONTEND_URL}">here</a> to visit frontend !</h1>`)
+})
 
 
 export default app;
