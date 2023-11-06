@@ -22,11 +22,9 @@ app.use(cors({
     methods:['GET','POST','PUT','DELETE']
 }))
 
-app.use((req, res, next) => {
-    req.header("Access-Control-Allow-Origin", "*");
-    next();
-  });
+app.options("*", cors({ origin: 'https://course-app-backend-nu.vercel.app', optionsSuccessStatus: 200 }));
 
+app.use(cors({ origin: "https://course-app-backend-nu.vercel.app", optionsSuccessStatus: 200 }));
 
 // Importing and Using routes
 import course from './routes/CourseRoutes.js';
