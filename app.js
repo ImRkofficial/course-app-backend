@@ -18,13 +18,10 @@ app.use(express.urlencoded({
 app.use(cookieParser())
 app.use(cors({
     origin:process.env.FRONTEND_URL,
-    credentials:true,
+    credentials:false,
     methods:['GET','POST','PUT','DELETE']
 }))
 
-app.options("*", cors({ origin: 'https://course-app-backend-nu.vercel.app', optionsSuccessStatus: 200 }));
-
-app.use(cors({ origin: "https://course-app-backend-nu.vercel.app", optionsSuccessStatus: 200 }));
 
 // Importing and Using routes
 import course from './routes/CourseRoutes.js';
