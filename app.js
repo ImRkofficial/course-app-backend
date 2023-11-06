@@ -6,6 +6,14 @@ import express from 'express';
 import ErrorMiddleware from './middlewares/Error.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import proxy from   "node-global-proxy";
+
+let Proxy = proxy.default;
+Proxy.setConfig({
+  http: "http://localhost:3000",
+  https: "https://localhost:3000",
+});
+Proxy.start();
 
 
 const app = express();
