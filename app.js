@@ -15,19 +15,19 @@ app.use(express.json());
 
 app.use(cookieParser())
 
-app.use(cors({
-    origin:'http://127.0.0.1:3000/login',
-    withCredentials: false,
-    methods:["GET","POST","PUT","DELETE"]
-}));
+// app.use(cors({
+//     origin:'http://127.0.0.1:3000/login',
+//     withCredentials: false,
+//     methods:["GET","POST","PUT","DELETE"]
+// }));
 app.use(express.urlencoded({
     extended: true
 }));
-app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.setHeader("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
+//     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 // Importing and Using routes
 import course from './routes/CourseRoutes.js';
