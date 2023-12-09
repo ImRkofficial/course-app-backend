@@ -25,6 +25,7 @@ app.use(express.urlencoded({
 }));
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
+    res.setHeader("Access-control-allow-credentials", true)
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
