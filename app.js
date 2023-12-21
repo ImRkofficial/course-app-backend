@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser())
 
 app.use(cors({
-    origin:'http://127.0.0.1:3000/login',
+    origin:'https://39808042.hubspotpreview-na1.com/',
     withCredentials: false,
     methods:["GET","POST","PUT","DELETE"]
 }));
