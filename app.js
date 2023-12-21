@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser())
 
 app.use(cors({
-    origin:'https://39808042.hubspotpreview-na1.com/',
+    origin:'https://39808042.hubspotpreview-na1.com',
     withCredentials: false,
     methods:["GET","POST","PUT","DELETE"]
 }));
@@ -24,8 +24,8 @@ app.use(express.urlencoded({
     extended: true
 }));
 app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
-    res.setHeader("Access-control-allow-credentials", true)
+    res.setHeader("Access-Control-Allow-Origin", 'https://39808042.hubspotpreview-na1.com'); // update to match the domain you will make the request from
+    res.setHeader("Access-control-allow-credentials", false)
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
